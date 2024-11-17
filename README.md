@@ -1,23 +1,49 @@
-![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FdaveKontro%2Fcreate-application-template%2Fmain%2Fpackage.json&query=%24.engines.node&logo=nodedotjs&label=node&labelColor=%23182f37&color=%23e2b432)
+![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FdaveKontro%2Fcreate-containerized-app-template%2Fmain%2Fpackage.json&query=%24.engines.node&logo=nodedotjs&label=node&labelColor=%23182f37&color=%23e2b432)
 ![Static Badge](https://img.shields.io/badge/npm-v10.2.4-%23e2b432?logo=npm&labelColor=%23182f37)
 
-# Create Containerized App Template
+# Create Containerized App Template (CCrATe)
 This project provides a straightforward Docker file for new and experienced users.
 
 The Docker file generates a container and installs a fully configured app template.
 
-## usage
+## install Docker
+reference the [docs](https://docs.docker.com/engine/install/)
+
+## install CCrATe
+first install globally  
+```
+npm install -g create-containerized-app-template
+```
+
+then create your project  
+```
+npx create-containerized-app-template --name={my-project}
+```
+
+OR
+
+clone the [repo](https://github.com/daveKontro/create-containerized-app-template)
+
+## build and run container
 build image `ccrate`
 ```
-docker build -t ccrate .
+npm run build
 ```
 
 run container `ccrate-app`
 ```
-docker run -p 127.0.0.1:3000:3000 --name ccrate-app -it ccrate
+npm run dev
 ```
 
 open http://localhost:3000 in browser
+
+## the containerized app
+access the container
+```
+npm run access
+```
+
+reference [create-application-template](https://www.npmjs.com/package/create-application-template) to learn more about the app
 
 ## other Docker commands
 view container info
@@ -25,17 +51,12 @@ view container info
 docker container inspect ccrate-app
 ```
 
-access container
-```
-docker exec -it -u node ccrate-app /bin/bash
-```
-
 list running containers
 ```
 docker container ls
 ```
 
-list all containers (including not running)
+list all containers (including idle)
 ```
 docker container ls -a
 ```
@@ -52,5 +73,5 @@ docker container rm ccrate-app
 
 remove image
 ```
-docker rmi ccrate:latest 
+docker rmi ccrate:latest
 ```

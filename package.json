@@ -1,11 +1,16 @@
 {
   "name": "create-containerized-app-template",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "provides a configured application template containerized via docker",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "docker build -t ccrate .",
+    "dev": "docker run -p 127.0.0.1:3000:3000 --name ccrate-app -it ccrate",
+    "access": "docker exec -it -u node ccrate-app /bin/bash"
+  },
   "keywords": [
     "template",
+    "container",
     "docker"
   ],
   "repository": {
@@ -16,5 +21,8 @@
   "license": "MIT",
   "engines": {
     "node": ">=18.19.1"
+  },
+  "dependencies": {
+    "yargs": "17.7.2"
   }
 }
