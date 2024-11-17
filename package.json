@@ -1,8 +1,11 @@
 {
   "name": "create-containerized-app-template",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "provides a configured application template containerized via docker",
   "main": "index.js",
+  "bin": {
+    "create-containerized-app-template": "bin/create-containerized-app-template.js"
+  },
   "scripts": {
     "build": "docker build -t ccrate .",
     "dev": "docker run -p 127.0.0.1:3000:3000 --name ccrate-app -it ccrate",

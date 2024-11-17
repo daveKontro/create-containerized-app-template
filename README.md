@@ -20,10 +20,6 @@ then create your project
 npx create-containerized-app-template --name={my-project}
 ```
 
-OR
-
-clone the [repo](https://github.com/daveKontro/create-containerized-app-template)
-
 ## build and run container
 build image `ccrate`
 ```
