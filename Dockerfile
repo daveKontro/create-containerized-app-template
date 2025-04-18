@@ -5,7 +5,7 @@ RUN mkdir -p /app && chown -R node:node /app
 
 # global installs
 RUN npm install -g serve@14.2.4
-RUN npm install -g create-application-template@2.2.2
+RUN npm install -g create-application-template@2.2.3
 
 # app setup
 USER node
