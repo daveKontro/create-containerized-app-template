@@ -1,6 +1,6 @@
 {
   "name": "create-containerized-app-template",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "provides a configured application template containerized via docker",
   "main": "index.js",
   "bin": {
