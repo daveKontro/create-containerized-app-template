@@ -43,12 +43,7 @@ const run = async () => {
   console.info('')
 
   // create project
-
-  if (argv.name !== '.') {
-    execCommand(`mkdir ${argv.name}`)
-  }
-
-  execCommand(`curl -fsSL ${repo} | tar -xz -C=${argv.name} --strip-components 1`)
+  execCommand(`curl -L ${repo} | tar zx --one-top-level=${argv.name} --strip-components 1`)
 
   // groom project
   if (packageJson.hasOwnProperty('name')) packageJson.name = projectName
